@@ -1002,6 +1002,7 @@ p {
   box-shadow: 2px 2px 40px 0px rgba(0, 0, 0, 0.07);
   position: relative;
   max-width: 370px;
+  margin: 0 auto;
 }
 .feature-section .feature-card .img-text {
   display: flex;
