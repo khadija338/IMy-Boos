@@ -1,2 +1,2 @@
 # IMy-Boos
-Khadija Tasnim
+Khadija Tasnim Khushi
