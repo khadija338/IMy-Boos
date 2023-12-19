@@ -633,54 +633,116 @@ p {
 
 /* -- Header area strats here --*/
 .header-area {
-    padding: 15px 0;
+    padding: 0px 15%;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    .header-logo {
-        a {
-            color: var(--primary-color1);
-            font-family: var(--font-popins);
-            font-size: 25px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 40px;
-        }
+    @include seventeen-down-device() {
+        padding: 0 8%;
     }
 
-    .header-menu {
-        display: inline-block;
+    @include xxl-device() {
+        padding: 0px 10%;
+    }
 
-        ul {
-            li {
-                display: inline-block;
-                position: relative;
-                padding: 0 25px;
+    @include xxl-down-device() {
+        padding: 0px 2%;
+    }
 
-                @include md-device() {
-                    padding: 0px 6px;
-                }
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 150px;
 
-                a {
-                    color: #222;
-                    font-family: var(--font-HelveticaNenu);
-                    font-size: 15px;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 30px;
-                    letter-spacing: 0.45px;
-                    text-transform: uppercase;
+        .header-logo {
+            a {
+                color: var(--primary-color1);
+                font-family: var(--font-popins);
+                font-size: 25px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 40px;
+            }
+        }
+
+        .main-menu {
+            display: inline-block;
+            position: relative;
+            ul {
+                li {
+                    display: inline-block;
+                    position: relative;
+                    padding: 0 8px;
+
+                    @include lg-device() {
+                        padding: 0 5px;
+                    }
+
+                    @include lg-up-device() {
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                    }
+
+                    a {
+                        color: #222;
+                        display: block;
+                        text-transform: capitalize;
+                        padding: 28px 15px;
+                        position: relative;
+                        font-family: var(--font-HelveticaNenu);
+                        text-transform: uppercase;
+                        font-weight: 400;
+                        font-size: 15px;
+                        transition: all .5s ease-out 0s;
+                        position: relative;
+
+                        @include fifteen-down-device() {
+                            padding: 25px 20px;
+                        }
+
+                        @include xxl-down-device() {
+                            padding: 24px 12px;
+                        }
+
+                        @include xl-device() {
+                            padding: 24px 5px;
+                            font-size: 14px;
+                        }
+
+                        @include lg-device() {
+                            font-size: 13px;
+                            padding: 24px 10px;
+                        }
+
+                        @include lg-down-device() {
+                            padding: 32px 9px;
+                            color: var(--text-color);
+                        }
+                    }
                 }
             }
         }
+
     }
 
-    .right-content {
-        display: inline-block;
-
+    .nav-right {
         ul {
-            li {
-                display: inline-block;
-                padding: 0 5px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
 
+            @include xxl-down-device() {
+                gap: 15px;
+            }
+
+            li {
                 a {
                     color: #222;
                     font-size: 20px;
@@ -688,6 +750,7 @@ p {
             }
         }
     }
+
 }
 
 /*-- banner section strats here --*/
@@ -1258,9 +1321,10 @@ p {
     .feature-card {
         background: #fff;
         box-shadow: 2px 2px 40px 0px rgba(0, 0, 0, 0.07);
-        position: relative;
+
         max-width: 370px;
         margin: 0 auto;
+
         .img-text {
             display: flex;
             position: absolute;
